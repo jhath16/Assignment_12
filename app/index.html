@@ -17,33 +17,33 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
 
+
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="../bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
   </head>
   <body>
 
-    <div class="hero-unit">
-      <h1>'Allo, 'Allo!</h1>
-      <p>You now have</p>
-      <ul>
-        <li>HTML5 Boilerplate</li>
-        <li>Normalize CSS</li>
 
-        <li>Sass</li>
-
-
-        <li>Modernizr</li>
-
-
-        <li>Bourbon & Neat</li>
-
-
-        <li>UnderscoreJS</li>
-
-      </ul>
-      <p>Don't forget to update your readme file!!</p>
+    <div class="container">
+      <div class="title-holder">
+        <ul class="title"></ul>
+      </div>
+      <div class="comment-holder">
+      <ul class="comment"></ul>
+      </div>
     </div>
+
+    <script id="title" type="text/template">
+
+        <li>
+          <a href=""><%=title%><a>
+        </li>
+
+    </script>
+    <script id="comment" type="text/template">
+        <p><%=body%></p>
+    </script>
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
@@ -51,7 +51,7 @@
     <script src="../bower_components/underscore/underscore.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
-
+    <script src="scripts/token.js"></script>
         <!-- build:js scripts/main.js -->
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
