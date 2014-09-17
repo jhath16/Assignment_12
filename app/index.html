@@ -30,14 +30,14 @@
         <ul class="title"></ul>
       </div>
       <div class="comment-holder">
-      <ul class="comment"></ul>
+      <div class="comment"></div>
       </div>
     </div>
 
     <script id="title" type="text/template">
 
         <li>
-          <a href=""><%=title%><a>
+          <div data-id="<%= id %>" class="button"><%=title%></div>
         </li>
 
     </script>
