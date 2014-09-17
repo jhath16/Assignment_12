@@ -26,12 +26,30 @@ $.getJSON(url).done(function(data) {
   });
 });
 };
-setInterval(grabTitles,3000);
+
+//Load on page load
+grabTitles();
+
+//Set interval for real time pulling
+//setInterval(grabTitles,5000);
 
 
+//Finds and prints comments on click event
 $(document).on('click','.button', function() {
+  $('.comment').empty();
   var id = $(this).attr('data-id');
   $.getJSON(url).done(function(data) {
-    console.log(id);
+    $.each(data, function(i) {
+      //console.log(data[i].id);
+      if(id == data[i].id) {
+        $.getJSON(data[i].comments_url).done(function(commentObject) {
+          console.log(commentObject);
+            $.each(commentObject, function(c) {
+              console.log(commentObject[c]);
+              renderTemplate('comment','.comment',commentObject[c]);
+            });
+        });
+      }
+    });
   });
 });
